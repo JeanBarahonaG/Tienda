@@ -1,11 +1,96 @@
-<html>
+<html lang="es">
     <head>
         <title>Tienda</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="descripcion" content="Pagina de la leccion 2" />
+        <meta name="keywords" content="html5, css, web, fidelitas" />
+        <link href="css/Estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <h1 style="color: greenyellow">Hola!</h1>
-        <div>Proyecto Inicial Aplicaciones Web y Patrones</div>
+        <!-- Esta etiqueta indica al navegador que es un encabezado-->
+        <header id="Encabezado">
+            <h1>Tienda en Linea</h1>
+            <br/>
+        </header>
+        
+        <nav id="Menu">
+            <a href= "ejemplo9.html">Atras</a>
+            <a href= "index.html">Home</a>
+            <a href= "ejemplo1.html">Adelante</a>
+        </nav>
+        
+        <aside id="barraLateral">
+            <h2>Productos mas vendidos</h2>
+            <p>El Lorem Ipsum fue concebido como un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal. El uso de Lorem Ipsum permite a los diseñadores reunir los diseños y la forma del contenido antes de que el contenido se haya creado, dando al diseño y al proceso de producción más libertad.</p>
+        </aside>
+        <section id="contenido">
+            <h2>Articulos Proncipales</h2>
+            <article>
+                <header>Asus Vivobook</header>
+                <p class="descripcion"><cite>El Lorem Ipsum fue concebido como </cite>un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal. El uso de Lorem Ipsum permite a los diseñadores reunir los diseños y la forma del contenido antes de que el contenido se haya creado, dando al diseño y al proceso de producción más libertad.</p>
+                <figure>
+                    <img src="Imagenes/MicrosoftTeams-image.png" alt="Asus Vivobook" width="200"/>
+                    <figcaption>Imagen con fines ilustrativos</figcaption>
+                </figure>
+            </article>
+            <article>
+                <header>Alienware ATD 900</header>
+                <p class="descripcion"><cite>El Lorem Ipsum fue concebido como </cite>un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal. El uso de Lorem Ipsum permite a los diseñadores reunir los diseños y la forma del contenido antes de que el contenido se haya creado, dando al diseño y al proceso de producción más libertad.</p>
+                <figure>
+                    <img src="Imagenes/MicrosoftTeams-image (1).png" alt="Alienware ATD 900" width="200"/>
+                    <figcaption>Mas vVendido</figcaption>
+                </figure>
+            </article>
+            <article>
+                <header>Impresora 3D</header>
+                <p class="descripcion"><cite>El Lorem Ipsum fue concebido como </cite>un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal. El uso de Lorem Ipsum permite a los diseñadores reunir los diseños y la forma del contenido antes de que el contenido se haya creado, dando al diseño y al proceso de producción más libertad.</p>
+                <figure>
+                    <img src="Imagenes/MicrosoftTeams-image (2).png" alt="Impresora 3D" width="200"/>
+                    <figcaption>Mas vVendido</figcaption>
+                </figure>
+            </article>
+            <br/>
+            <br/>
+            <<article>
+                <h2>Lineas de productos</h2>
+                <table border="0">
+                    <thead id="encabezadoTabla">
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaResumen">
+                        <tr>
+                            <td>1</td>
+                            <td>Teclados</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mouses</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Monitores</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Soportes</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>MousePads</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Audifonos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <footer id="piePagina">
+            Derechos reservados &COPY; 2023 <address class="lineaDireccion">Cartago, Costa Rica</address> <address class="lineaDireccion">Tel: 7018-9450</address>
+        </footer>
     </body>
 </html>
