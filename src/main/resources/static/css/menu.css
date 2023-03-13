@@ -54,6 +54,32 @@ body {
 }
 
 .nav-menu-link:hover {
-    background-color: lightblue;
-    transition: 0.7s;
+    font-size: 22px;
+    background-color: #ff9966;
+    transition: 1s;
+}
+
+.footer{
+    background-color: black;
+    text-align: center;
+    color: white;
+    height: 20px;
+    position: fixed; /*posicion fija*/
+    bottom: 0;
+    left: 0;
+    width: 100%; /*ancho*/
+}
+
+.contenido{
+    background-color: lavender;
+    position: fixed;
+    top: 80px;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    overflow: auto;
+}
+.link {
+    color: black;
+    text-decoration: none;
 }
