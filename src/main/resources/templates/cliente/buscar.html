@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/Plantilla:: header"/>
+        <div class="contenido">
+            <h2>Buscar Cliente</h2>
+            <br>
+            <a th:href="@{/cliente/listado}" class="nav-menu-link link">Regresar</a>
+            <br>
+            <br>
+            <form th:action="@{/cliente/buscar}" method="POST" th:object="${cliente}">
+                <label for="nombre">Nombre</label><br>
+                <input type="text" name="nombre" th:field="*{nombre}"/><br>
+                <label for="apellidos">Apellidos</label><br>
+                <input type="text" name="apellidos" th:field="*{apellidos}"/><br>
+                <br>
+                <input type="submit" name="Buscar" value="Buscar"/>
+            </form>
+            <br>
+            <h3>Resultados de la busqueda</h3>
+            <br>
+            <br>
+            <div th:if="${clientes != null}">
+                <div th:if="${clientes != clientes.empty}">
+                    <table border="1">
+                        <thead>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Correo</th>
+                        <th>Telefono</th>
+                        <th>Limite </th>
+                        </thead>
+                        <tbody>
+                            <tr th:each="cliente : ${clientes}">
+                                <td th:text="${cliente.nombre}"></td>
+                                <td th:text="${cliente.apellidos}"></td>
+                                <td th:text="${cliente.correo}"></td>
+                                <td th:text="${cliente.telefono}"></td>
+                                <td th:text="${#numbers.formatDecimal(cliente.credito.limite, 3, 2)}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div th:if="${clientes == null or clientes.empty}">
+                    Datos no encotrados....
+                </div>
+            </div>
+            <footer th:replace="layout/plantilla :: footer"/>
+    </body>
+</html>

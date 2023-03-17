@@ -45,4 +45,16 @@ public class ClienteController {
         return "redirect:/cliente/listado";
     }
 
+    @PostMapping("/cliente/buscar")
+    public String inicio(Cliente cliente,Model model) {
+        var clientes = clienteService.getNombreOApellidos(cliente.getNombre(), cliente.getApellidos());
+        model.addAttribute("clientes", clientes);
+        return "/cliente/buscar";
+    }
+    
+    @GetMapping("/cliente/buscar")
+    public String inicio(Cliente cliente) {
+        return "/cliente/buscar";
+    }
+
 }
