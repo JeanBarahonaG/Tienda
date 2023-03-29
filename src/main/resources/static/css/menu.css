@@ -78,6 +78,7 @@ body {
     left: 0;
     width: 100%;
     overflow: auto;
+    padding: 10px;
 }
 .link {
     color: black;

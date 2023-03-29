@@ -1,10 +1,6 @@
 package com.tienda.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.*;
 import lombok.Data;
 
 @Data //Sirve para poder hacer los gets y sets

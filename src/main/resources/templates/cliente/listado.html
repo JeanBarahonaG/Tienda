@@ -1,44 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
+    <head th:replace="layout/plantilla :: head">
         <title>TechShop</title>
-        <meta charset="UTF-8">
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <header th:replace="layout/Plantilla:: header"/>
+        <header th:replace="layout/plantilla :: header" />
 
-        <div class="contenido">
-            <h2>Clientes</h2>
-            <br>
-            <a th:href="@{/cliente/nuevo}" class="nav-menu-link link">Nuevo Cliente</a>
-            <a th:href="@{/cliente/buscar}" class="nav-menu-link link">Buscar Cliente</a>
-            <br>
-            <br>
-            <br>
-            <div th:if="${clientes != null and !clientes.empty}">
-                <table border="1">
-                    <thead>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Correo</th>
-                    <th>Telefono</th>
-                    <th>Limite </th>
-                    <th colspan="2">Acciones</th>
-                    </thead>
-                    <tbody>
-                        <tr th:each="cliente : ${clientes}">
-                            <td th:text="${cliente.nombre}"></td>
-                            <td th:text="${cliente.apellidos}"></td>
-                            <td th:text="${cliente.correo}"></td>
-                            <td th:text="${cliente.telefono}"></td>
-                            <td th:text="${#numbers.formatDecimal(cliente.credito.limite, 3, 2)}"></td>
-                            <td><a th:href="@{/cliente/modificar/} + ${cliente.idCliente}" class="nav-menu-link link">Modificar</a></td>
-                            <td><a th:href="@{/cliente/eliminar/} + ${cliente.idCliente}" class="nav-menu-link link">Eliminar</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <footer th:replace="layout/plantilla :: footer"/>
+        <section th:replace="cliente/fragmentosCliente :: botonesAgregar"/>
+        <section th:replace="cliente/fragmentosCliente :: agregarCliente"/>
+        <section th:replace="cliente/fragmentosCliente :: listadoClientes"/>
+
+        <footer th:replace="layout/plantilla :: footer" />
     </body>
 </html>
