@@ -1,6 +1,6 @@
 package com.tienda.domain;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data //Sirve para poder hacer los gets y sets

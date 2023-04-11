@@ -7,25 +7,7 @@
     </head>
     <body>
         <header th:replace="layout/Plantilla:: header"/>
-        <div class="contenido">
-            <h2>Datos de la categoria</h2>
-            <br>
-            <a th:href="@{/categoria/listado}">Regresar</a>
-            <br>
-            <br>
-            <form th:action="@{/categoria/guardar}" method="POST" th:object="${categoria}">
-
-                <input type="hidden" name="idCategoria" th:field="*{idCategoria}"/>
-
-                <label for="descripcion">Descripcion</label><br>
-                <input type="text" name="descripcion" th:field="*{descripcion}" /><br>
-
-                <label for="activo">Activo</label><br>
-                <input type="checkbox" name="activo" th:field="*{activo}" /><br><br>
-
-                <input type="submit" name="Guardar" value="Guardar"/>
-            </form>
-        </div>
+        <section th:replace="categoria/fragmentosCategoria :: editarCategoria"/>
         <footer th:replace="layout/plantilla :: footer"/>
     </body>
 </html>

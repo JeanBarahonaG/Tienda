@@ -5,37 +5,9 @@
     </head>
     <body>
         <header th:replace="layout/Plantilla:: header"/>
-
-        <div class="contenido">
-            <h2>Articulos</h2>
-            <a th:href="@{/articulo/nuevo}">Nuevo Articulo</a>
-            <br>
-            <br>
-            <br>
-            <div th:if="${articulos != null and !articulos.empty}">
-                <table border="1">
-                    <thead>
-                    <th>Descripcion</th>
-                    <th>Precio</th>
-                    <th>Existencias</th>
-                    <th>Activa</th>
-                    <th colspan="2">Acciones</th>
-                    </thead>
-                    <tbody>
-                        <tr th:each="articulo : ${articulos}">                          
-                            <td th:text="${articulo.descripcion}"></td>
-                            <td th:text="${#numbers.formatDecimal(articulo.precio, 3, 2)}"></td>
-                            <td th:text="${articulo.existencias}"></td>
-                            <td><input type="checkbox" name="activa" th:checked="${articulo.activo}" disable="true"></td> <!--Esto hace la funcion de si el articulo esta activo sale con un check box--> 
-                            <td><a th:href="@{/articulo/modificar/} + ${articulo.idArticulo}" class="nav-menu-link link">Modificar</a></td>
-                            <td><a th:href="@{/articulo/eliminar/} + ${articulo.idArticulo}" class="nav-menu-link link">Eliminar</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div th:if="${articulos == null and articulos.empty}">
-                No hay articulos.....
-            <div/>
-            <footer th:replace="layout/plantilla :: footer"/>
+        <section th:replace="articulo/fragmentosArticulo :: botonesAgregar"/>
+        <section th:replace="articulo/fragmentosArticulo :: agregarArticulo"/>
+        <section th:replace="articulo/fragmentosArticulo :: listadoArticulo"/>
+        <footer th:replace="layout/plantilla :: footer"/>
     </body>
 </html>
