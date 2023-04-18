@@ -8,7 +8,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 @Configuration
 public class TemplateResolverConfiguration {
 
-    @Bean
+ @Bean
     public SpringResourceTemplateResolver TemplateResolver_0() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setPrefix("classpath:/templates");
@@ -52,6 +52,18 @@ public class TemplateResolverConfiguration {
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCharacterEncoding("UTF-8");
         templateResolver.setOrder(3);
+        templateResolver.setCheckExistence(true);
+        return templateResolver;
+    }
+    
+    @Bean
+    public SpringResourceTemplateResolver TemplateResolver_4() {
+        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
+        templateResolver.setPrefix("templates/carrito/");
+        templateResolver.setSuffix(".html");
+        templateResolver.setTemplateMode(TemplateMode.HTML);
+        templateResolver.setCharacterEncoding("UTF-8");
+        templateResolver.setOrder(4);
         templateResolver.setCheckExistence(true);
         return templateResolver;
     }

@@ -13,30 +13,33 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    @Bean
-    public LocaleResolver localeResolver() {
+    @Bean    
+    public LocaleResolver localeResolver () {
         var slr = new SessionLocaleResolver();
         slr.setDefaultLocale(new Locale("es"));
         return slr;
     }
-
-    @Bean
+    @Bean    
     public LocaleChangeInterceptor localeChangeInterceptor() {
         var lci = new LocaleChangeInterceptor();
         lci.setParamName("lang");
         return lci;
     }
-
-    @Override
+    @Override    
     public void addInterceptors(InterceptorRegistry registro) {
         registro.addInterceptor(localeChangeInterceptor());
     }
     
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("index");
-        registry.addViewController("/index").setViewName("index");
-        registry.addViewController("/login").setViewName("login");
-        registry.addViewController("/errores/403").setViewName("/errores/403");
+        registry.addViewController("/")
+                .setViewName("index");
+        registry.addViewController("/index")
+                .setViewName("index");
+        registry.addViewController("/login")
+                .setViewName("login");
+        registry.addViewController("/errores/403")
+                .setViewName("/errores/403");
+        
     }
 }

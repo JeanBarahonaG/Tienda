@@ -23,6 +23,7 @@ public class ArticuloController {
     public String inicio(Model model) {
         var articulos = articuloService.getArticulos(false);
         model.addAttribute("articulos", articulos);
+
         return "/articulo/listado";
     }
 
@@ -41,8 +42,6 @@ public class ArticuloController {
 
     @GetMapping("/articulo/modificar/{idArticulo}")
     public String modificarArticulo(Articulo articulo, Model model) {
-        var categorias = categoriaService.getCategorias(true);
-        model.addAttribute("categorias", categorias);
         articulo = articuloService.getArticulo(articulo);
         model.addAttribute("articulo", articulo);
         return "/articulo/modificar";
